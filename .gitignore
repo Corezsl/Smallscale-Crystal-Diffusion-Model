@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables & API Keys
+.env
+.env.local
+config.local.yaml
+
+# Data & Datasets (Prevent uploading heavy materials databases)
+data/raw/
+data/processed/
+*.cif
+*.json
+*.csv
+
+# Model Checkpoints & Logs
+checkpoints/
+outputs/
+logs/
+*.pt
+*.pth
+*.ckpt
+*.bin
+wandb/
+
+# Jupyter Notebooks & IDEs
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
