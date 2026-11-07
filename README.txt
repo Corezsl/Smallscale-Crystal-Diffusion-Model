@@ -36,3 +36,10 @@ Set a Materials Project API key in ``MP_API_KEY`` and run:
 This writes up to 1,000 structures with ``energy_above_hull <= 0.05`` to
 ``data/processed/materials_project.json``. The downloader does not store the
 API key in the repository.
+
+Forward diffusion
+-----------------
+
+``crystal_diffusion.diffusion.CrystalDiffusion`` applies a linear beta
+schedule. Lattice entries and atom-type embeddings receive Gaussian noise;
+fractional coordinates are wrapped modulo one after noising.
