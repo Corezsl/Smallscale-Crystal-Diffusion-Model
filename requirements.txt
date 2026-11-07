@@ -1,21 +1,13 @@
-# Deep Learning & Graph Neural Networks
+# Core runtime dependencies
+# Note: this file is intentionally short and mirrors the package metadata in pyproject.toml.
 torch>=2.0.0
 torch-geometric>=2.3.0
-
-# Materials Science & Chemistry Libraries
 pymatgen>=2023.5.10
 ase>=3.22.1
 mp-api>=0.33.0
-
-# Scientific Computing & Data Processing
 numpy>=1.24.0
 scipy>=1.10.0
 pandas>=2.0.0
-
-# Utilities & Config
 pyyaml>=6.0
 tqdm>=4.65.0
-streamlit>=1.30.0
 matplotlib>=3.7.0
-jupyter>=1.0.0
-pytest>=7.0.0

@@ -99,13 +99,52 @@ def train(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.parse_args()
+    parser = argparse.ArgumentParser(
+        description=(
+            "Train a crystal diffusion model. This script expects a model and a "
+            "PyTorch Geometric DataLoader built by your own training code."
+        )
+    )
+    parser.add_argument("--epochs", type=int, default=1, help="number of epochs")
+    parser.add_argument(
+        "--learning-rate",
+        type=float,
+        default=1e-4,
+        help="AdamW learning rate",
+    )
+    parser.add_argument(
+        "--device",
+        default="cpu",
+        help="device to train on (example: cpu, cuda, mps)",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="print a usage example instead of starting a training run",
+    )
+    args = parser.parse_args()
+
+    if args.dry_run:
+        print("This training script is a helper, not a fully automated CLI.")
+        print("Build a CrystalDataset, a CrystalGNN, and a DataLoader in your own code.")
+        print()
+        print("Example:")
+        print("  from crystal_diffusion.data import CrystalDataset")
+        print("  from crystal_diffusion.diffusion import CrystalDiffusion")
+        print("  from torch_geometric.loader import DataLoader")
+        print("  # create model, loader, diffusion, then call train(model, loader, diffusion, epochs=10)")
+        return
+
     parser.error(
-        "construct a CrystalGNN and CrystalDataset, then call train(model, loader, diffusion, ...)"
+        "A complete training run requires a model and DataLoader. "
+        "Use the train(model, loader, diffusion, ...) function in your own code "
+        "or run with --dry-run to print an example."
     )
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(message)s",
+    )
     main()
