@@ -1,5 +1,8 @@
 """Crystal data structures and dataset utilities."""
 
-from .dataset import CrystalDataset
+from __future__ import annotations
 
-__all__ = ["CrystalDataset"]
+from .dataset import CrystalDataset
+from .synthetic import make_synthetic_crystal_dataset
+
+__all__ = ["CrystalDataset", "make_synthetic_crystal_dataset"]

@@ -30,10 +30,33 @@ app = [
 dev = [
     "pytest>=7.0.0",
     "jupyter>=1.0.0",
+    "ruff>=0.5.0",
 ]
+
+[project.scripts]
+smallscale-crystal-download = "crystal_diffusion.cli:download_cli"
+smallscale-crystal-train = "crystal_diffusion.cli:train_cli"
+smallscale-crystal-generate = "crystal_diffusion.cli:generate_cli"
+smallscale-crystal-evaluate = "crystal_diffusion.cli:evaluate_cli"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["F401"]
