@@ -43,3 +43,12 @@ Forward diffusion
 ``crystal_diffusion.diffusion.CrystalDiffusion`` applies a linear beta
 schedule. Lattice entries and atom-type embeddings receive Gaussian noise;
 fractional coordinates are wrapped modulo one after noising.
+
+Training
+--------
+
+The programmatic training entry point is ``scripts/train.py:train``. A
+``CrystalGNN`` passed to it must accept ``(noisy_batch, timesteps)`` and return
+noise predictions under the keys ``lattice``, ``frac_coords``, and
+``atom_latent``. The loop samples one timestep per graph, uses AdamW, computes
+the sum of the three MSE losses, and logs one loss per epoch.
