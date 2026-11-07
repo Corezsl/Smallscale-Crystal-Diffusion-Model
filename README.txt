@@ -52,3 +52,14 @@ The programmatic training entry point is ``scripts/train.py:train``. A
 noise predictions under the keys ``lattice``, ``frac_coords``, and
 ``atom_latent``. The loop samples one timestep per graph, uses AdamW, computes
 the sum of the three MSE losses, and logs one loss per epoch.
+
+Inference and evaluation
+------------------------
+
+``scripts/generate.py`` provides ``generate`` and ``p_sample`` for reverse
+diffusion from Gaussian lattice, coordinate, and atom-latent noise. Coordinates
+are wrapped modulo one after every reverse step. ``scripts/evaluate.py`` decodes
+atom latents using nearest learned embeddings, constructs a Pymatgen
+``Structure``, checks periodic close contacts, and attempts an ASE EMT energy
+calculation. EMT may report an unsupported-element error for generated
+compositions outside its element parameterization.
