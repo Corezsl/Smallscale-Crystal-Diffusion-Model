@@ -25,3 +25,14 @@ incrementally.
 Run the smoke tests with:
 
     python -m pytest
+
+Download Materials Project structures
+-------------------------------------
+
+Set a Materials Project API key in ``MP_API_KEY`` and run:
+
+    python scripts/download_mp.py
+
+This writes up to 1,000 structures with ``energy_above_hull <= 0.05`` to
+``data/processed/materials_project.json``. The downloader does not store the
+API key in the repository.

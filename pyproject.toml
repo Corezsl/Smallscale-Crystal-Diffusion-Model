@@ -13,6 +13,7 @@ dependencies = [
     "torch-geometric>=2.3.0",
     "pymatgen>=2023.5.10",
     "ase>=3.22.1",
+    "mp-api>=0.33.0",
     "numpy>=1.24.0",
     "scipy>=1.10.0",
     "pandas>=2.0.0",
