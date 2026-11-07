@@ -1,8 +1,6 @@
 # Deep Learning & Graph Neural Networks
 torch>=2.0.0
 torch-geometric>=2.3.0
-torch-scatter
-torch-sparse
 
 # Materials Science & Chemistry Libraries
 pymatgen>=2023.5.10
@@ -17,5 +15,6 @@ pandas>=2.0.0
 # Utilities & Config
 pyyaml>=6.0
 tqdm>=4.65.0
+streamlit>=1.30.0
 matplotlib>=3.7.0
 jupyter>=1.0.0

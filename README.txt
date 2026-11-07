@@ -63,3 +63,16 @@ atom latents using nearest learned embeddings, constructs a Pymatgen
 ``Structure``, checks periodic close contacts, and attempts an ASE EMT energy
 calculation. EMT may report an unsupported-element error for generated
 compositions outside its element parameterization.
+
+Interactive GUI
+---------------
+
+Install the optional Streamlit UI and launch it with:
+
+    python -m pip install -e ".[app]"
+    streamlit run scripts/app.py
+
+The GUI supports CIF/Pymatgen JSON uploads, structure summaries, periodic
+overlap checks, ASE EMT energy checks, generation configuration, and training
+configuration. Generation becomes executable once a matching ``CrystalGNN``
+architecture and checkpoint loader are supplied.
